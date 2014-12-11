@@ -12,5 +12,8 @@
     "url": "https://thiagopaxa@bitbucket.org/thiagopaxa/nodebegginer.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "cli-color": "^0.3.2"
+  }
 }
