@@ -1,19 +1,21 @@
 var clc = require('cli-color');
 var exec = require('child_process').exec;
 
-exports.start = function(){
+exports.start = function(response){
   console.log(clc.yellow('Request for "start" was called'));
   var content = "empty";
 
-  exec("ls -lah", function (error, stdout, stderr) {
-    content = stdout;
+  exec("sudo find /*", function (error, stdout, stderr) {
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.end(stdout);
   });
 
-  return content;
 
 }
-exports.upload = function(){
+exports.upload = function(response){
+
   console.log(clc.yellow('Request for "upload" was called'));
-  return "Hello Upload";
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.end("Hello Upload");
 
 }
