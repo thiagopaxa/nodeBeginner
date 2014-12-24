@@ -9,7 +9,8 @@ var start = function(route,handle){
     var urlFull = url.parse(req.url,true);
     var pathname = urlFull.pathname;
     console.log("Request for \'" + pathname + "\' received");
-    content = route(handle,pathname,res)
+    
+    route(handle,pathname,res)
 
   }
   

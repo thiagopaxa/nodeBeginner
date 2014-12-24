@@ -1,7 +1,7 @@
 var url = require('url');
 
 var route = function(handle,path,response){
-  console.warn("Routing the path: " + path)
+  console.log("Routing the request for " + path)
   if (typeof handle[path] === 'function'){
     handle[path](response);
   }else{

@@ -3,13 +3,11 @@ var exec = require('child_process').exec;
 
 exports.start = function(response){
   console.log(clc.yellow('Request for "start" was called'));
-  var content = "empty";
 
-  exec("sudo find /*", function (error, stdout, stderr) {
+  exec("find /",{ timeout: 10000, maxBuffer: 20000*1024 }, function (error, stdout, stderr) {
     response.writeHead(200, {"Content-Type": "text/plain"});
     response.end(stdout);
   });
-
 
 }
 exports.upload = function(response){
