@@ -6,20 +6,11 @@ exports.start = function(route,handle){
   
   var onRequest = function(req,res){
     
-    var postData = "";
     var urlFull = url.parse(req.url,true);
     var pathname = urlFull.pathname;
     console.log("Request for \'" + pathname + "\' received");
     
-    req.setEncoding("utf8");
-
-    req.on('data',function(postDataChunk){
-      postData += postDataChunk;
-      console.log("Chunk of POST data received: '"+ postDataChunk +"'.");
-    });
-    req.on('end',function(){
-      route(handle,pathname,res,postData);
-    });
+    route(handle,pathname,res,req);
 
   }
   

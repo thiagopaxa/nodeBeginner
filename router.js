@@ -1,9 +1,9 @@
 var url = require('url');
 
-exports.route = function(handle,path,response,postData){
+exports.route = function(handle,path,response,request){
   console.log("Routing the request for " + path)
   if (typeof handle[path] === 'function'){
-    handle[path](response,postData);
+    handle[path](response,request);
   }else{
     console.log("No Request handler for "+ path);
     response.writeHead(404,{"Content-Type":"text/plain"});
