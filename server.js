@@ -6,6 +6,7 @@ exports.start = function(route,handle){
   
   var onRequest = function(req,res){
     
+    var postData = "";
     var urlFull = url.parse(req.url,true);
     var pathname = urlFull.pathname;
     console.log("Request for \'" + pathname + "\' received");
