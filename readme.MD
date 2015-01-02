@@ -3,8 +3,8 @@
 
 ## Book by: Manuel Kiessling.
 
-All coded by me, with learning purpose
+All coded by me, just for learning purpose
 
-it might e some little meaningless changes along the way.
+it might have some little meaningless changes along the way.
 
 But the essence is the same
